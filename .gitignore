@@ -2,5 +2,8 @@
 .env
 .streamlit/secrets.toml
 
+# quick setup-check results (the full data/eval_results.json is committed)
+data/eval_results_quick.json
+
 __pycache__/
 .venv/

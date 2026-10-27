@@ -165,16 +165,18 @@ def evaluation_tab():
     st.markdown(
         f"All three approaches answered the same **{n} questions**: answerable questions, questions where the "
         "relevant policy exists but lacks the detail asked for, and out-of-scope questions that no policy covers. "
-        "An answer is **unsupported** when it states something the policy database does not support, or "
-        "answers an out-of-scope question instead of declining. LLM answers were checked by a separate Claude "
-        f"call that saw the whole database. Model: `{data['model']}`, run {data['run_at']}.")
+        "An answer is **unsupported** when the approach answers (instead of declining) but the answer is not "
+        "backed by the database: it relies on a policy that does not cover the question, answers an "
+        "out-of-scope question, or contains claims the database does not support. LLM answers were checked "
+        f"by a separate Claude call that saw the whole database. Model: `{data['model']}`, run {data['run_at']}.")
 
     s = data["summary"]
     summary = pd.DataFrame({
         "Approach": [core.APPROACHES[k] for k in s],
         "Correct policy": [f"{v['correct_policy_pct']}%" for v in s.values()],
         "Unsupported answers": [f"{v['unsupported_pct']}% ({v['unsupported_count']})" for v in s.values()],
-        "Median time": [f"{v['median_seconds']:.2f} s" for v in s.values()],
+        "Median time": [f"{v['median_seconds']:.2f} s" if v["median_seconds"] >= 0.001 else "< 1 ms"
+                        for v in s.values()],
         "Mean tokens / question": [f"{v['mean_tokens']:,}" for v in s.values()],
         "Answerable: correct": [v["correct_answerable"] for v in s.values()],
         "Detail missing: unsupported": [v["unsupported_detail_missing"] for v in s.values()],
@@ -210,7 +212,7 @@ with tab_eval:
     evaluation_tab()
 with tab_writeup:
     if WRITEUP.exists():
-        st.markdown(WRITEUP.read_text(encoding="utf8"))
+        st.markdown(WRITEUP.read_text(encoding="utf8").replace("$", r"\$"))  # $ would start LaTeX math
     else:
         st.info("The write-up is added after the evaluation has been run.")
 with tab_db:

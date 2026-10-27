@@ -1,0 +1,2883 @@
+{
+  "model": "claude-opus-5-5",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "top_k": 3,
+  "run_at": "2026-10-27 15:35",
+  "summary": {
+    "rules": {
+      "questions": 32,
+      "correct_policy_pct": 65.6,
+      "unsupported_pct": 28.1,
+      "unsupported_count": 9,
+      "median_seconds": 0.0,
+      "mean_seconds": 0.0,
+      "mean_tokens": 0,
+      "total_tokens": 0,
+      "correct_answerable": "11/20",
+      "unsupported_answerable": "7/20",
+      "correct_detail_missing": "6/7",
+      "unsupported_detail_missing": "1/7",
+      "correct_out_of_scope": "4/5",
+      "unsupported_out_of_scope": "1/5"
+    },
+    "llm": {
+      "questions": 32,
+      "correct_policy_pct": 100.0,
+      "unsupported_pct": 0.0,
+      "unsupported_count": 0,
+      "median_seconds": 2.532,
+      "mean_seconds": 2.702,
+      "mean_tokens": 4991,
+      "total_tokens": 159714,
+      "correct_answerable": "20/20",
+      "unsupported_answerable": "0/20",
+      "correct_detail_missing": "7/7",
+      "unsupported_detail_missing": "0/7",
+      "correct_out_of_scope": "5/5",
+      "unsupported_out_of_scope": "0/5"
+    },
+    "rag": {
+      "questions": 32,
+      "correct_policy_pct": 96.9,
+      "unsupported_pct": 0.0,
+      "unsupported_count": 0,
+      "median_seconds": 2.149,
+      "mean_seconds": 2.403,
+      "mean_tokens": 735,
+      "total_tokens": 23505,
+      "correct_answerable": "19/20",
+      "unsupported_answerable": "0/20",
+      "correct_detail_missing": "7/7",
+      "unsupported_detail_missing": "0/7",
+      "correct_out_of_scope": "5/5",
+      "unsupported_out_of_scope": "0/5"
+    }
+  },
+  "rows": [
+    {
+      "approach": "rules",
+      "answer": "Remote Work Policy: Employees may work remotely up to three days per week with manager approval.",
+      "policies": [
+        "Remote Work Policy"
+      ],
+      "found": true,
+      "seconds": 9.490000957157463e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Remote Work Policy",
+          5.0
+        ],
+        [
+          "Remote Access Policy",
+          4.0
+        ],
+        [
+          "Remote Meeting Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How many days a week am I allowed to work from home?",
+      "type": "answerable",
+      "expected": [
+        "Remote Work Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Under the Remote Work Policy, you may work remotely up to three days per week, provided you have manager approval.",
+      "policies": [
+        "Remote Work Policy"
+      ],
+      "found": true,
+      "seconds": 2.6601551000057952,
+      "input_tokens": 4907,
+      "output_tokens": 62,
+      "retrieved": [],
+      "tokens": 4969,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4832,
+      "question": "How many days a week am I allowed to work from home?",
+      "type": "answerable",
+      "expected": [
+        "Remote Work Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "You may work remotely up to three days per week, provided you have your manager's approval.",
+      "policies": [
+        "Remote Work Policy"
+      ],
+      "found": true,
+      "seconds": 1.9639326999895275,
+      "input_tokens": 667,
+      "output_tokens": 52,
+      "retrieved": [
+        [
+          "Remote Work Policy",
+          0.78
+        ],
+        [
+          "Work From Abroad Policy",
+          0.721
+        ],
+        [
+          "Vacation Policy",
+          0.716
+        ]
+      ],
+      "tokens": 719,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4822,
+      "question": "How many days a week am I allowed to work from home?",
+      "type": "answerable",
+      "expected": [
+        "Remote Work Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Bereavement Leave Policy: Employees may take up to 5 days of bereavement leave.",
+      "policies": [
+        "Bereavement Leave Policy"
+      ],
+      "found": true,
+      "seconds": 7.429999823216349e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Bereavement Leave Policy",
+          5.0
+        ],
+        [
+          "Parental Leave Policy",
+          1.0
+        ],
+        [
+          "Background Check Policy",
+          1.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "My grandmother passed away. How much time off can I take?",
+      "type": "answerable",
+      "expected": [
+        "Bereavement Leave Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "I'm sorry for your loss. Under the Bereavement Leave Policy, you may take up to 5 days of bereavement leave. The policy does not specify whether eligibility depends on the relationship to the deceased, or whether the leave is paid.",
+      "policies": [
+        "Bereavement Leave Policy"
+      ],
+      "found": true,
+      "seconds": 2.3392448000086006,
+      "input_tokens": 4909,
+      "output_tokens": 110,
+      "retrieved": [],
+      "tokens": 5019,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4879,
+      "question": "My grandmother passed away. How much time off can I take?",
+      "type": "answerable",
+      "expected": [
+        "Bereavement Leave Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Under the Bereavement Leave Policy, employees may take up to 5 days of bereavement leave. The policy does not specify which family relationships qualify or whether the leave is paid.",
+      "policies": [
+        "Bereavement Leave Policy"
+      ],
+      "found": true,
+      "seconds": 2.195572800002992,
+      "input_tokens": 674,
+      "output_tokens": 89,
+      "retrieved": [
+        [
+          "Bereavement Leave Policy",
+          0.704
+        ],
+        [
+          "Vacation Policy",
+          0.649
+        ],
+        [
+          "Parental Leave Policy",
+          0.604
+        ]
+      ],
+      "tokens": 763,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4858,
+      "question": "My grandmother passed away. How much time off can I take?",
+      "type": "answerable",
+      "expected": [
+        "Bereavement Leave Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Expense Approval Policy: All expenses over $500 require prior approval from Finance.",
+      "policies": [
+        "Expense Approval Policy"
+      ],
+      "found": true,
+      "seconds": 0.00012199999764561653,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Expense Approval Policy",
+          8.0
+        ],
+        [
+          "Procurement Policy",
+          5.0
+        ],
+        [
+          "Marketing Approval Policy",
+          3.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "I want to buy a monitor for $800. Do I need approval first?",
+      "type": "answerable",
+      "expected": [
+        "Expense Approval Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Yes. Expenses over $500 require prior approval from Finance, so an $800 monitor needs Finance approval before you buy it, and the purchase must also follow the procurement process. If the monitor is ergonomic equipment for remote work, you may also request it under the Home Office Equipment Policy, though that policy does not specify the request process or any spending limits.",
+      "policies": [
+        "Expense Approval Policy",
+        "Procurement Policy",
+        "Home Office Equipment Policy"
+      ],
+      "found": true,
+      "seconds": 2.8328051999997115,
+      "input_tokens": 4913,
+      "output_tokens": 163,
+      "retrieved": [],
+      "tokens": 5076,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4918,
+      "question": "I want to buy a monitor for $800. Do I need approval first?",
+      "type": "answerable",
+      "expected": [
+        "Expense Approval Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Yes. Under the Expense Approval Policy, all expenses over $500 require prior approval from Finance, so an $800 monitor needs Finance approval before you buy it. Because a monitor is hardware, the Hardware Upgrade Policy also says hardware upgrades must be requested through IT.",
+      "policies": [
+        "Expense Approval Policy",
+        "Hardware Upgrade Policy"
+      ],
+      "found": true,
+      "seconds": 2.9752941000042483,
+      "input_tokens": 661,
+      "output_tokens": 139,
+      "retrieved": [
+        [
+          "Expense Approval Policy",
+          0.657
+        ],
+        [
+          "Hardware Upgrade Policy",
+          0.636
+        ],
+        [
+          "Marketing Approval Policy",
+          0.628
+        ]
+      ],
+      "tokens": 800,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 5165,
+      "question": "I want to buy a monitor for $800. Do I need approval first?",
+      "type": "answerable",
+      "expected": [
+        "Expense Approval Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Password Policy: Passwords must be changed every 90 days and meet complexity requirements.",
+      "policies": [
+        "Password Policy"
+      ],
+      "found": true,
+      "seconds": 9.06999921426177e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Password Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How often do I have to change my password?",
+      "type": "answerable",
+      "expected": [
+        "Password Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Under the Password Policy, passwords must be changed every 90 days and must also meet complexity requirements.",
+      "policies": [
+        "Password Policy"
+      ],
+      "found": true,
+      "seconds": 2.312669699997059,
+      "input_tokens": 4902,
+      "output_tokens": 58,
+      "retrieved": [],
+      "tokens": 4960,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4825,
+      "question": "How often do I have to change my password?",
+      "type": "answerable",
+      "expected": [
+        "Password Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "You must change your password every 90 days, and the new password must meet complexity requirements. The policy does not specify what those complexity requirements are.",
+      "policies": [
+        "Password Policy"
+      ],
+      "found": true,
+      "seconds": 2.109401900001103,
+      "input_tokens": 644,
+      "output_tokens": 67,
+      "retrieved": [
+        [
+          "Password Policy",
+          0.832
+        ],
+        [
+          "Office Access Policy",
+          0.629
+        ],
+        [
+          "Probation Period Policy",
+          0.588
+        ]
+      ],
+      "tokens": 711,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4835,
+      "question": "How often do I have to change my password?",
+      "type": "answerable",
+      "expected": [
+        "Password Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Dress Code Policy: Employees are expected to dress in business casual attire.",
+      "policies": [
+        "Dress Code Policy"
+      ],
+      "found": true,
+      "seconds": 7.870000263210386e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Dress Code Policy",
+          5.0
+        ],
+        [
+          "Office Access Policy",
+          4.0
+        ],
+        [
+          "Home Office Equipment Policy",
+          3.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "What should I wear to the office?",
+      "type": "answerable",
+      "expected": [
+        "Dress Code Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "According to the Dress Code Policy, employees are expected to dress in business casual attire. The policy does not specify further details about what counts as business casual.",
+      "policies": [
+        "Dress Code Policy"
+      ],
+      "found": true,
+      "seconds": 3.991703799998504,
+      "input_tokens": 4901,
+      "output_tokens": 73,
+      "retrieved": [],
+      "tokens": 4974,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4837,
+      "question": "What should I wear to the office?",
+      "type": "answerable",
+      "expected": [
+        "Dress Code Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "According to the Dress Code Policy, employees are expected to dress in business casual attire. In addition, the Office Access Policy requires that access badges be worn and not shared.",
+      "policies": [
+        "Dress Code Policy",
+        "Office Access Policy"
+      ],
+      "found": true,
+      "seconds": 5.436306600007811,
+      "input_tokens": 643,
+      "output_tokens": 89,
+      "retrieved": [
+        [
+          "Dress Code Policy",
+          0.692
+        ],
+        [
+          "Office Access Policy",
+          0.655
+        ],
+        [
+          "Meeting Etiquette Policy",
+          0.613
+        ]
+      ],
+      "tokens": 732,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4845,
+      "question": "What should I wear to the office?",
+      "type": "answerable",
+      "expected": [
+        "Dress Code Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Parental Leave Policy: Eligible employees may take up to 12 weeks of paid parental leave.",
+      "policies": [
+        "Parental Leave Policy"
+      ],
+      "found": true,
+      "seconds": 9.210000280290842e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Parental Leave Policy",
+          9.0
+        ],
+        [
+          "Sick Leave Policy",
+          4.0
+        ],
+        [
+          "Bereavement Leave Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How long is paid parental leave?",
+      "type": "answerable",
+      "expected": [
+        "Parental Leave Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Under the Parental Leave Policy, eligible employees may take up to 12 weeks of paid parental leave. The policy does not specify the eligibility criteria.",
+      "policies": [
+        "Parental Leave Policy"
+      ],
+      "found": true,
+      "seconds": 3.2922237000020687,
+      "input_tokens": 4902,
+      "output_tokens": 81,
+      "retrieved": [],
+      "tokens": 4983,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4845,
+      "question": "How long is paid parental leave?",
+      "type": "answerable",
+      "expected": [
+        "Parental Leave Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Eligible employees may take up to 12 weeks of paid parental leave.",
+      "policies": [
+        "Parental Leave Policy"
+      ],
+      "found": true,
+      "seconds": 1.7535817999887513,
+      "input_tokens": 667,
+      "output_tokens": 53,
+      "retrieved": [
+        [
+          "Parental Leave Policy",
+          0.91
+        ],
+        [
+          "Bereavement Leave Policy",
+          0.705
+        ],
+        [
+          "Work From Abroad Policy",
+          0.688
+        ]
+      ],
+      "tokens": 720,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4816,
+      "question": "How long is paid parental leave?",
+      "type": "answerable",
+      "expected": [
+        "Parental Leave Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Social Media Policy: Employees must not disclose confidential information on social media.",
+      "policies": [
+        "Social Media Policy"
+      ],
+      "found": true,
+      "seconds": 7.950000872369856e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Social Media Policy",
+          4.0
+        ],
+        [
+          "Media Contact Policy",
+          4.0
+        ],
+        [
+          "Product Return Policy",
+          3.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": true,
+      "judge_note": "Answered with a policy that does not cover the question",
+      "question": "A journalist called me about our new product. Can I talk to them?",
+      "type": "answerable",
+      "expected": [
+        "Media Contact Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Only authorized employees may speak to the media, so you should not talk to the journalist unless you are authorized. The policy does not specify who is authorized or how to refer media inquiries.",
+      "policies": [
+        "Media Contact Policy"
+      ],
+      "found": true,
+      "seconds": 2.1823694999911822,
+      "input_tokens": 4911,
+      "output_tokens": 84,
+      "retrieved": [],
+      "tokens": 4995,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4857,
+      "question": "A journalist called me about our new product. Can I talk to them?",
+      "type": "answerable",
+      "expected": [
+        "Media Contact Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Only authorized employees may speak to the media, so you may talk to the journalist only if you are authorized to do so. The policy does not specify how authorization is granted or what to do with the inquiry if you are not authorized.",
+      "policies": [
+        "Media Contact Policy"
+      ],
+      "found": true,
+      "seconds": 2.160149099989212,
+      "input_tokens": 648,
+      "output_tokens": 95,
+      "retrieved": [
+        [
+          "Media Contact Policy",
+          0.693
+        ],
+        [
+          "Press Release Policy",
+          0.637
+        ],
+        [
+          "Content Publishing Policy",
+          0.625
+        ]
+      ],
+      "tokens": 743,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4869,
+      "question": "A journalist called me about our new product. Can I talk to them?",
+      "type": "answerable",
+      "expected": [
+        "Media Contact Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Vacation Policy: Employees receive 15 vacation days per year. Unused days may roll over.",
+      "policies": [
+        "Vacation Policy"
+      ],
+      "found": true,
+      "seconds": 8.50000069476664e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Vacation Policy",
+          6.0
+        ],
+        [
+          "Expense Approval Policy",
+          1.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How many vacation days do I get, and can I carry unused ones over?",
+      "type": "answerable",
+      "expected": [
+        "Vacation Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Under the Vacation Policy, employees receive 15 vacation days per year, and unused days may roll over. The policy does not specify any limit on how many days can be rolled over.",
+      "policies": [
+        "Vacation Policy"
+      ],
+      "found": true,
+      "seconds": 2.060573300012038,
+      "input_tokens": 4913,
+      "output_tokens": 82,
+      "retrieved": [],
+      "tokens": 4995,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4858,
+      "question": "How many vacation days do I get, and can I carry unused ones over?",
+      "type": "answerable",
+      "expected": [
+        "Vacation Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "You receive 15 vacation days per year, and unused days may roll over. The policy does not specify how many days can roll over or for how long.",
+      "policies": [
+        "Vacation Policy"
+      ],
+      "found": true,
+      "seconds": 1.879273499987903,
+      "input_tokens": 680,
+      "output_tokens": 68,
+      "retrieved": [
+        [
+          "Vacation Policy",
+          0.781
+        ],
+        [
+          "Travel Reimbursement Policy",
+          0.669
+        ],
+        [
+          "Work From Abroad Policy",
+          0.612
+        ]
+      ],
+      "tokens": 748,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4845,
+      "question": "How many vacation days do I get, and can I carry unused ones over?",
+      "type": "answerable",
+      "expected": [
+        "Vacation Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Expense Approval Policy: All expenses over $500 require prior approval from Finance.",
+      "policies": [
+        "Expense Approval Policy"
+      ],
+      "found": true,
+      "seconds": 8.529999468009919e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Expense Approval Policy",
+          4.0
+        ],
+        [
+          "Remote Work Policy",
+          2.0
+        ],
+        [
+          "Onboarding Policy",
+          1.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": true,
+      "judge_note": "Answered with a policy that does not cover the question",
+      "question": "I'd like to spend three weeks working from Spain. Is that possible?",
+      "type": "answerable",
+      "expected": [
+        "Work From Abroad Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Yes, it may be possible: the Work From Abroad Policy allows employees to work abroad for up to 30 days with approval, so a three-week stay would fall within that limit if it is approved. The policy does not specify who grants the approval or how to request it.",
+      "policies": [
+        "Work From Abroad Policy"
+      ],
+      "found": true,
+      "seconds": 2.912733899996965,
+      "input_tokens": 4915,
+      "output_tokens": 110,
+      "retrieved": [],
+      "tokens": 5025,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4886,
+      "question": "I'd like to spend three weeks working from Spain. Is that possible?",
+      "type": "answerable",
+      "expected": [
+        "Work From Abroad Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Yes, it should be possible: the Work From Abroad Policy allows employees to work abroad for up to 30 days with approval, and three weeks falls within that limit. You will need to get approval first. The policy does not specify who grants approval or any country-specific conditions, such as rules for Spain.",
+      "policies": [
+        "Work From Abroad Policy"
+      ],
+      "found": true,
+      "seconds": 2.3342984999908367,
+      "input_tokens": 682,
+      "output_tokens": 123,
+      "retrieved": [
+        [
+          "Work From Abroad Policy",
+          0.645
+        ],
+        [
+          "Vacation Policy",
+          0.59
+        ],
+        [
+          "Travel Reimbursement Policy",
+          0.585
+        ]
+      ],
+      "tokens": 805,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4899,
+      "question": "I'd like to spend three weeks working from Spain. Is that possible?",
+      "type": "answerable",
+      "expected": [
+        "Work From Abroad Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Probation Period Policy: New hires are subject to a 90-day probation period.",
+      "policies": [
+        "Probation Period Policy"
+      ],
+      "found": true,
+      "seconds": 7.900000491645187e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Probation Period Policy",
+          10.0
+        ],
+        [
+          "Onboarding Policy",
+          2.0
+        ],
+        [
+          "Background Check Policy",
+          2.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How long is the probation period for new hires?",
+      "type": "answerable",
+      "expected": [
+        "Probation Period Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "New hires are subject to a 90-day probation period.",
+      "policies": [
+        "Probation Period Policy"
+      ],
+      "found": true,
+      "seconds": 3.7056621000083396,
+      "input_tokens": 4904,
+      "output_tokens": 44,
+      "retrieved": [],
+      "tokens": 4948,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4811,
+      "question": "How long is the probation period for new hires?",
+      "type": "answerable",
+      "expected": [
+        "Probation Period Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "New hires are subject to a 90-day probation period.",
+      "policies": [
+        "Probation Period Policy"
+      ],
+      "found": true,
+      "seconds": 1.7044899000029545,
+      "input_tokens": 657,
+      "output_tokens": 44,
+      "retrieved": [
+        [
+          "Probation Period Policy",
+          0.914
+        ],
+        [
+          "Onboarding Policy",
+          0.719
+        ],
+        [
+          "Parental Leave Policy",
+          0.681
+        ]
+      ],
+      "tokens": 701,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4811,
+      "question": "How long is the probation period for new hires?",
+      "type": "answerable",
+      "expected": [
+        "Probation Period Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Laptop Usage Policy: Company laptops must be used for business purposes only.",
+      "policies": [
+        "Laptop Usage Policy"
+      ],
+      "found": true,
+      "seconds": 7.439999899361283e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Laptop Usage Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": true,
+      "judge_note": "Answered with a policy that does not cover the question",
+      "question": "I clicked a suspicious link and think my laptop is compromised. What do I do?",
+      "type": "answerable",
+      "expected": [
+        "Security Incident Policy",
+        "Incident Response Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Under the Security Incident Policy, security incidents must be reported immediately, and the Helpdesk Ticket Policy requires all IT issues to be submitted via helpdesk ticket. The Incident Response Policy also states that incident response procedures must be followed during disruptions, though the policies do not specify what those procedures are or any further steps to take with the laptop.",
+      "policies": [
+        "Security Incident Policy",
+        "Helpdesk Ticket Policy",
+        "Incident Response Policy"
+      ],
+      "found": true,
+      "seconds": 5.616197000010288,
+      "input_tokens": 4918,
+      "output_tokens": 167,
+      "retrieved": [],
+      "tokens": 5085,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4925,
+      "question": "I clicked a suspicious link and think my laptop is compromised. What do I do?",
+      "type": "answerable",
+      "expected": [
+        "Security Incident Policy",
+        "Incident Response Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 1.6794716000003973,
+      "input_tokens": 659,
+      "output_tokens": 30,
+      "retrieved": [
+        [
+          "Hardware Upgrade Policy",
+          0.574
+        ],
+        [
+          "Laptop Usage Policy",
+          0.573
+        ],
+        [
+          "Office Access Policy",
+          0.562
+        ]
+      ],
+      "tokens": 689,
+      "correct_policy": false,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "I clicked a suspicious link and think my laptop is compromised. What do I do?",
+      "type": "answerable",
+      "expected": [
+        "Security Incident Policy",
+        "Incident Response Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Travel Reimbursement Policy: Employees must submit receipts for travel expenses within 30 days.",
+      "policies": [
+        "Travel Reimbursement Policy"
+      ],
+      "found": true,
+      "seconds": 7.329999061767012e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Travel Reimbursement Policy",
+          5.0
+        ],
+        [
+          "Business Continuity Policy",
+          4.0
+        ],
+        [
+          "Dress Code Policy",
+          1.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "When do I have to hand in receipts after a business trip?",
+      "type": "answerable",
+      "expected": [
+        "Travel Reimbursement Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Receipts for travel expenses must be submitted within 30 days.",
+      "policies": [
+        "Travel Reimbursement Policy"
+      ],
+      "found": true,
+      "seconds": 2.3910469000111334,
+      "input_tokens": 4909,
+      "output_tokens": 53,
+      "retrieved": [],
+      "tokens": 4962,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4821,
+      "question": "When do I have to hand in receipts after a business trip?",
+      "type": "answerable",
+      "expected": [
+        "Travel Reimbursement Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Under the Travel Reimbursement Policy, you must submit receipts for travel expenses within 30 days. The policy does not specify when those 30 days start counting from (for example, the end of the trip).",
+      "policies": [
+        "Travel Reimbursement Policy"
+      ],
+      "found": true,
+      "seconds": 2.129475800000364,
+      "input_tokens": 656,
+      "output_tokens": 95,
+      "retrieved": [
+        [
+          "Travel Reimbursement Policy",
+          0.805
+        ],
+        [
+          "Account Management Policy",
+          0.667
+        ],
+        [
+          "Company Property Policy",
+          0.662
+        ]
+      ],
+      "tokens": 751,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4863,
+      "question": "When do I have to hand in receipts after a business trip?",
+      "type": "answerable",
+      "expected": [
+        "Travel Reimbursement Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Laptop Usage Policy: Company laptops must be used for business purposes only.",
+      "policies": [
+        "Laptop Usage Policy"
+      ],
+      "found": true,
+      "seconds": 8.13999940874055e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Laptop Usage Policy",
+          4.0
+        ],
+        [
+          "Software Installation Policy",
+          1.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": true,
+      "judge_note": "Answered with a policy that does not cover the question",
+      "question": "Can I install Spotify on my work laptop?",
+      "type": "answerable",
+      "expected": [
+        "Software Installation Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "The Software Installation Policy states that only approved software may be installed on company devices, and the Laptop Usage Policy states that company laptops must be used for business purposes only. The policies do not specify whether Spotify is on the approved software list or how to get software approved.",
+      "policies": [
+        "Software Installation Policy",
+        "Laptop Usage Policy"
+      ],
+      "found": true,
+      "seconds": 2.7499389000004157,
+      "input_tokens": 4907,
+      "output_tokens": 119,
+      "retrieved": [],
+      "tokens": 5026,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4877,
+      "question": "Can I install Spotify on my work laptop?",
+      "type": "answerable",
+      "expected": [
+        "Software Installation Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Only approved software may be installed on company devices, and company laptops must be used for business purposes only. The policies do not list which applications are approved, so they do not specify whether Spotify specifically is allowed.",
+      "policies": [
+        "Software Installation Policy",
+        "Laptop Usage Policy"
+      ],
+      "found": true,
+      "seconds": 2.399246100001619,
+      "input_tokens": 651,
+      "output_tokens": 101,
+      "retrieved": [
+        [
+          "Software Installation Policy",
+          0.588
+        ],
+        [
+          "Laptop Usage Policy",
+          0.579
+        ],
+        [
+          "Hardware Upgrade Policy",
+          0.562
+        ]
+      ],
+      "tokens": 752,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4860,
+      "question": "Can I install Spotify on my work laptop?",
+      "type": "answerable",
+      "expected": [
+        "Software Installation Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 0.00015469999925699085,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Whistleblower Policy",
+          2.0
+        ],
+        [
+          "Security Incident Policy",
+          1.0
+        ],
+        [
+          "Workplace Safety Policy",
+          1.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How do I report unethical behaviour without revealing my name?",
+      "type": "answerable",
+      "expected": [
+        "Whistleblower Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Under the Whistleblower Policy, employees may report unethical behavior anonymously. The policy does not specify the reporting channel or procedure for submitting an anonymous report.",
+      "policies": [
+        "Whistleblower Policy"
+      ],
+      "found": true,
+      "seconds": 2.726159700003336,
+      "input_tokens": 4910,
+      "output_tokens": 85,
+      "retrieved": [],
+      "tokens": 4995,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4857,
+      "question": "How do I report unethical behaviour without revealing my name?",
+      "type": "answerable",
+      "expected": [
+        "Whistleblower Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Under the Whistleblower Policy, employees may report unethical behavior anonymously, so you are allowed to report without revealing your name. However, the policy does not specify how or through which channel to submit an anonymous report.",
+      "policies": [
+        "Whistleblower Policy"
+      ],
+      "found": true,
+      "seconds": 2.312521799991373,
+      "input_tokens": 652,
+      "output_tokens": 97,
+      "retrieved": [
+        [
+          "Whistleblower Policy",
+          0.761
+        ],
+        [
+          "Anti-Harassment Policy",
+          0.628
+        ],
+        [
+          "Social Media Policy",
+          0.626
+        ]
+      ],
+      "tokens": 749,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4869,
+      "question": "How do I report unethical behaviour without revealing my name?",
+      "type": "answerable",
+      "expected": [
+        "Whistleblower Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Contract Review Policy: Contracts must be reviewed by Legal before signing.",
+      "policies": [
+        "Contract Review Policy"
+      ],
+      "found": true,
+      "seconds": 8.119999256450683e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Contract Review Policy",
+          6.0
+        ],
+        [
+          "Background Check Policy",
+          4.0
+        ],
+        [
+          "Quality Assurance Policy",
+          2.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Does a contract need to be checked before I sign it?",
+      "type": "answerable",
+      "expected": [
+        "Contract Review Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Yes. Under the Contract Review Policy, contracts must be reviewed by Legal before signing.",
+      "policies": [
+        "Contract Review Policy"
+      ],
+      "found": true,
+      "seconds": 2.245405599998776,
+      "input_tokens": 4908,
+      "output_tokens": 61,
+      "retrieved": [],
+      "tokens": 4969,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4831,
+      "question": "Does a contract need to be checked before I sign it?",
+      "type": "answerable",
+      "expected": [
+        "Contract Review Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Yes. Contracts must be reviewed by Legal before signing.",
+      "policies": [
+        "Contract Review Policy"
+      ],
+      "found": true,
+      "seconds": 1.7800470999936806,
+      "input_tokens": 644,
+      "output_tokens": 50,
+      "retrieved": [
+        [
+          "Contract Review Policy",
+          0.844
+        ],
+        [
+          "Marketing Approval Policy",
+          0.677
+        ],
+        [
+          "Quality Assurance Policy",
+          0.675
+        ]
+      ],
+      "tokens": 694,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4821,
+      "question": "Does a contract need to be checked before I sign it?",
+      "type": "answerable",
+      "expected": [
+        "Contract Review Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Remote Access Policy: Remote access must use secure VPN connections.",
+      "policies": [
+        "Remote Access Policy"
+      ],
+      "found": true,
+      "seconds": 7.409999670926481e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Remote Access Policy",
+          4.0
+        ],
+        [
+          "Office Access Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": true,
+      "judge_note": "Answered with a policy that does not cover the question",
+      "question": "Can I lend my access badge to a colleague who forgot theirs?",
+      "type": "answerable",
+      "expected": [
+        "Office Access Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "No. The Office Access Policy states that access badges must be worn and not shared, so you should not lend your badge to a colleague. The policy does not specify what a colleague who forgot their badge should do instead.",
+      "policies": [
+        "Office Access Policy"
+      ],
+      "found": true,
+      "seconds": 2.212301599996863,
+      "input_tokens": 4914,
+      "output_tokens": 90,
+      "retrieved": [],
+      "tokens": 5004,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4868,
+      "question": "Can I lend my access badge to a colleague who forgot theirs?",
+      "type": "answerable",
+      "expected": [
+        "Office Access Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "No. The Office Access Policy states that access badges must be worn and not shared, so you may not lend your badge to a colleague. The policy does not specify what a colleague who forgot their badge should do instead.",
+      "policies": [
+        "Office Access Policy"
+      ],
+      "found": true,
+      "seconds": 2.6578697999939322,
+      "input_tokens": 655,
+      "output_tokens": 90,
+      "retrieved": [
+        [
+          "Office Access Policy",
+          0.755
+        ],
+        [
+          "Password Policy",
+          0.609
+        ],
+        [
+          "Support Ticket Policy",
+          0.603
+        ]
+      ],
+      "tokens": 745,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4868,
+      "question": "Can I lend my access badge to a colleague who forgot theirs?",
+      "type": "answerable",
+      "expected": [
+        "Office Access Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Tuition Assistance Policy: Employees may apply for tuition assistance for approved programs.",
+      "policies": [
+        "Tuition Assistance Policy"
+      ],
+      "found": true,
+      "seconds": 7.680000271648169e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Tuition Assistance Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Can the company help pay for my master's degree?",
+      "type": "answerable",
+      "expected": [
+        "Tuition Assistance Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Under the Tuition Assistance Policy, employees may apply for tuition assistance for approved programs, so you can apply if your master's degree program is approved. The policy does not specify how much is covered, which programs qualify, or how the approval process works.",
+      "policies": [
+        "Tuition Assistance Policy"
+      ],
+      "found": true,
+      "seconds": 2.311725000006845,
+      "input_tokens": 4906,
+      "output_tokens": 108,
+      "retrieved": [],
+      "tokens": 5014,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4874,
+      "question": "Can the company help pay for my master's degree?",
+      "type": "answerable",
+      "expected": [
+        "Tuition Assistance Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Under the Tuition Assistance Policy, employees may apply for tuition assistance for approved programs, so a master's degree may qualify if it is an approved program. The policy does not specify which programs are approved, how much assistance is provided, or how to apply.",
+      "policies": [
+        "Tuition Assistance Policy"
+      ],
+      "found": true,
+      "seconds": 2.627337500001886,
+      "input_tokens": 660,
+      "output_tokens": 111,
+      "retrieved": [
+        [
+          "Tuition Assistance Policy",
+          0.688
+        ],
+        [
+          "Offer Letter Policy",
+          0.621
+        ],
+        [
+          "Training Reimbursement Policy",
+          0.598
+        ]
+      ],
+      "tokens": 771,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4877,
+      "question": "Can the company help pay for my master's degree?",
+      "type": "answerable",
+      "expected": [
+        "Tuition Assistance Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Remote Work Policy: Employees may work remotely up to three days per week with manager approval.",
+      "policies": [
+        "Remote Work Policy"
+      ],
+      "found": true,
+      "seconds": 8.260000322479755e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Remote Work Policy",
+          4.0
+        ],
+        [
+          "Remote Access Policy",
+          4.0
+        ],
+        [
+          "Remote Meeting Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": true,
+      "judge_note": "Answered with a policy that does not cover the question",
+      "question": "How do I connect to company systems from home securely?",
+      "type": "answerable",
+      "expected": [
+        "Remote Access Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Under the Remote Access Policy, remote access to company systems must use secure VPN connections. The policy does not specify setup steps, which VPN client to use, or how to obtain access.",
+      "policies": [
+        "Remote Access Policy"
+      ],
+      "found": true,
+      "seconds": 2.500724800003809,
+      "input_tokens": 4906,
+      "output_tokens": 85,
+      "retrieved": [],
+      "tokens": 4991,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4853,
+      "question": "How do I connect to company systems from home securely?",
+      "type": "answerable",
+      "expected": [
+        "Remote Access Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Under the Remote Access Policy, remote access to company systems must use secure VPN connections. The policy does not say which VPN to use, how to set it up, or how to get access.",
+      "policies": [
+        "Remote Access Policy"
+      ],
+      "found": true,
+      "seconds": 4.9534267999988515,
+      "input_tokens": 646,
+      "output_tokens": 82,
+      "retrieved": [
+        [
+          "Remote Access Policy",
+          0.697
+        ],
+        [
+          "Mobile Device Policy",
+          0.61
+        ],
+        [
+          "Software Installation Policy",
+          0.599
+        ]
+      ],
+      "tokens": 728,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4851,
+      "question": "How do I connect to company systems from home securely?",
+      "type": "answerable",
+      "expected": [
+        "Remote Access Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Exit Interview Policy: Departing employees are encouraged to participate in an exit interview.",
+      "policies": [
+        "Exit Interview Policy"
+      ],
+      "found": true,
+      "seconds": 8.05000017862767e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Exit Interview Policy",
+          5.0
+        ],
+        [
+          "Exit Clearance Policy",
+          5.0
+        ],
+        [
+          "Laptop Usage Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": true,
+      "judge_note": "Answered with a policy that does not cover the question",
+      "question": "I'm leaving the company. What do I have to do with my laptop?",
+      "type": "answerable",
+      "expected": [
+        "IT Asset Management Policy",
+        "Company Property Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "When you leave, all IT assets, which includes your laptop, must be returned, and company property in general must be returned upon exit. You must also complete exit clearance, though the policies do not say what the clearance steps are or how the laptop should be returned.",
+      "policies": [
+        "IT Asset Management Policy",
+        "Company Property Policy",
+        "Exit Clearance Policy"
+      ],
+      "found": true,
+      "seconds": 4.234122599998955,
+      "input_tokens": 4913,
+      "output_tokens": 124,
+      "retrieved": [],
+      "tokens": 5037,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4878,
+      "question": "I'm leaving the company. What do I have to do with my laptop?",
+      "type": "answerable",
+      "expected": [
+        "IT Asset Management Policy",
+        "Company Property Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "When you leave, you must return company property, and all IT assets such as your laptop must be returned upon exit. The policies do not specify the procedure, deadline, or who to return the laptop to.",
+      "policies": [
+        "Company Property Policy",
+        "IT Asset Management Policy"
+      ],
+      "found": true,
+      "seconds": 2.7847678999969503,
+      "input_tokens": 655,
+      "output_tokens": 96,
+      "retrieved": [
+        [
+          "Laptop Usage Policy",
+          0.707
+        ],
+        [
+          "Company Property Policy",
+          0.684
+        ],
+        [
+          "IT Asset Management Policy",
+          0.675
+        ]
+      ],
+      "tokens": 751,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4862,
+      "question": "I'm leaving the company. What do I have to do with my laptop?",
+      "type": "answerable",
+      "expected": [
+        "IT Asset Management Policy",
+        "Company Property Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 7.639999967068434e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Meeting Etiquette Policy",
+          1.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Can I start work later in the morning and finish later?",
+      "type": "answerable",
+      "expected": [
+        "Flexible Hours Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "Under the Flexible Hours Policy, employees may adjust their work hours with manager approval, so you can shift your start and finish times if your manager approves. The policy does not specify any limits on how much hours can be shifted or how to request the change.",
+      "policies": [
+        "Flexible Hours Policy"
+      ],
+      "found": true,
+      "seconds": 2.9826530999998795,
+      "input_tokens": 4907,
+      "output_tokens": 105,
+      "retrieved": [],
+      "tokens": 5012,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4873,
+      "question": "Can I start work later in the morning and finish later?",
+      "type": "answerable",
+      "expected": [
+        "Flexible Hours Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "Yes, the Flexible Hours Policy allows employees to adjust their work hours with manager approval, so you may start and finish later if your manager approves. The policy does not specify any limits on how far hours can be shifted.",
+      "policies": [
+        "Flexible Hours Policy"
+      ],
+      "found": true,
+      "seconds": 2.3027730000030715,
+      "input_tokens": 660,
+      "output_tokens": 99,
+      "retrieved": [
+        [
+          "Meeting Etiquette Policy",
+          0.65
+        ],
+        [
+          "Flexible Hours Policy",
+          0.645
+        ],
+        [
+          "Remote Work Policy",
+          0.615
+        ]
+      ],
+      "tokens": 759,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4867,
+      "question": "Can I start work later in the morning and finish later?",
+      "type": "answerable",
+      "expected": [
+        "Flexible Hours Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Sick Leave Policy: Employees accrue sick leave monthly for personal or family illness.",
+      "policies": [
+        "Sick Leave Policy"
+      ],
+      "found": true,
+      "seconds": 8.189999789465219e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Sick Leave Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How many sick days do I earn each month?",
+      "type": "detail_missing",
+      "expected": [
+        "Sick Leave Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "The Sick Leave Policy states that employees accrue sick leave monthly for personal or family illness. It does not specify how many sick days are earned each month.",
+      "policies": [
+        "Sick Leave Policy"
+      ],
+      "found": true,
+      "seconds": 2.836764099993161,
+      "input_tokens": 4904,
+      "output_tokens": 77,
+      "retrieved": [],
+      "tokens": 4981,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4842,
+      "question": "How many sick days do I earn each month?",
+      "type": "detail_missing",
+      "expected": [
+        "Sick Leave Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "The Sick Leave Policy states that employees accrue sick leave monthly for personal or family illness, but it does not specify how many days are earned each month.",
+      "policies": [
+        "Sick Leave Policy"
+      ],
+      "found": true,
+      "seconds": 3.4899975000007544,
+      "input_tokens": 664,
+      "output_tokens": 76,
+      "retrieved": [
+        [
+          "Sick Leave Policy",
+          0.698
+        ],
+        [
+          "Vacation Policy",
+          0.649
+        ],
+        [
+          "Remote Work Policy",
+          0.64
+        ]
+      ],
+      "tokens": 740,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4842,
+      "question": "How many sick days do I earn each month?",
+      "type": "detail_missing",
+      "expected": [
+        "Sick Leave Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Training Reimbursement Policy: Employees may be reimbursed for approved external training.",
+      "policies": [
+        "Training Reimbursement Policy"
+      ],
+      "found": true,
+      "seconds": 8.179999713320285e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Training Reimbursement Policy",
+          6.0
+        ],
+        [
+          "Tuition Assistance Policy",
+          4.0
+        ],
+        [
+          "Cybersecurity Awareness Policy",
+          1.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "What is the maximum amount I can be reimbursed for an external training course?",
+      "type": "detail_missing",
+      "expected": [
+        "Training Reimbursement Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "The Training Reimbursement Policy states that employees may be reimbursed for approved external training, but it does not specify a maximum reimbursement amount.",
+      "policies": [
+        "Training Reimbursement Policy"
+      ],
+      "found": true,
+      "seconds": 2.628174900004524,
+      "input_tokens": 4914,
+      "output_tokens": 78,
+      "retrieved": [],
+      "tokens": 4992,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4851,
+      "question": "What is the maximum amount I can be reimbursed for an external training course?",
+      "type": "detail_missing",
+      "expected": [
+        "Training Reimbursement Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "The Training Reimbursement Policy states that employees may be reimbursed for approved external training, but it does not specify a maximum reimbursement amount. Separately, the Expense Approval Policy requires prior approval from Finance for any expense over $500.",
+      "policies": [
+        "Training Reimbursement Policy",
+        "Expense Approval Policy"
+      ],
+      "found": true,
+      "seconds": 2.1382720000110567,
+      "input_tokens": 679,
+      "output_tokens": 120,
+      "retrieved": [
+        [
+          "Training Reimbursement Policy",
+          0.797
+        ],
+        [
+          "Travel Reimbursement Policy",
+          0.673
+        ],
+        [
+          "Expense Approval Policy",
+          0.669
+        ]
+      ],
+      "tokens": 799,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4884,
+      "question": "What is the maximum amount I can be reimbursed for an external training course?",
+      "type": "detail_missing",
+      "expected": [
+        "Training Reimbursement Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Remote Meeting Policy: Remote meetings should use approved video conferencing tools.",
+      "policies": [
+        "Remote Meeting Policy"
+      ],
+      "found": true,
+      "seconds": 7.79999973019585e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Remote Meeting Policy",
+          9.0
+        ],
+        [
+          "Remote Access Policy",
+          5.0
+        ],
+        [
+          "Remote Work Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Which video conferencing tool are we supposed to use for remote meetings?",
+      "type": "detail_missing",
+      "expected": [
+        "Remote Meeting Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "The Remote Meeting Policy states that remote meetings should use approved video conferencing tools. It does not specify which tool or tools are approved.",
+      "policies": [
+        "Remote Meeting Policy"
+      ],
+      "found": true,
+      "seconds": 2.6892540999979246,
+      "input_tokens": 4915,
+      "output_tokens": 75,
+      "retrieved": [],
+      "tokens": 4990,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4851,
+      "question": "Which video conferencing tool are we supposed to use for remote meetings?",
+      "type": "detail_missing",
+      "expected": [
+        "Remote Meeting Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "The Remote Meeting Policy states that remote meetings should use approved video conferencing tools. However, it does not specify which tool or tools are approved.",
+      "policies": [
+        "Remote Meeting Policy"
+      ],
+      "found": true,
+      "seconds": 1.9669254000036744,
+      "input_tokens": 664,
+      "output_tokens": 77,
+      "retrieved": [
+        [
+          "Remote Meeting Policy",
+          0.892
+        ],
+        [
+          "Remote Access Policy",
+          0.613
+        ],
+        [
+          "Meeting Etiquette Policy",
+          0.595
+        ]
+      ],
+      "tokens": 741,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4853,
+      "question": "Which video conferencing tool are we supposed to use for remote meetings?",
+      "type": "detail_missing",
+      "expected": [
+        "Remote Meeting Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Shipping Policy: Shipping must use approved carriers.",
+      "policies": [
+        "Shipping Policy"
+      ],
+      "found": true,
+      "seconds": 7.429999823216349e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Shipping Policy",
+          6.0
+        ],
+        [
+          "Software Installation Policy",
+          1.0
+        ],
+        [
+          "Company Vehicle Policy",
+          1.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Which shipping carriers are approved?",
+      "type": "detail_missing",
+      "expected": [
+        "Shipping Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "The Shipping Policy states that shipping must use approved carriers, but it does not specify which carriers are approved.",
+      "policies": [
+        "Shipping Policy"
+      ],
+      "found": true,
+      "seconds": 1.9918478000035975,
+      "input_tokens": 4904,
+      "output_tokens": 62,
+      "retrieved": [],
+      "tokens": 4966,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4830,
+      "question": "Which shipping carriers are approved?",
+      "type": "detail_missing",
+      "expected": [
+        "Shipping Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "The Shipping Policy states that shipping must use approved carriers, but it does not specify which carriers are approved.",
+      "policies": [
+        "Shipping Policy"
+      ],
+      "found": true,
+      "seconds": 1.7662284999969415,
+      "input_tokens": 636,
+      "output_tokens": 62,
+      "retrieved": [
+        [
+          "Shipping Policy",
+          0.857
+        ],
+        [
+          "Marketing Approval Policy",
+          0.658
+        ],
+        [
+          "Company Vehicle Policy",
+          0.626
+        ]
+      ],
+      "tokens": 698,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4830,
+      "question": "Which shipping carriers are approved?",
+      "type": "detail_missing",
+      "expected": [
+        "Shipping Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Support Ticket Policy: Support tickets must be resolved within SLA.",
+      "policies": [
+        "Support Ticket Policy"
+      ],
+      "found": true,
+      "seconds": 0.00010200000542681664,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Support Ticket Policy",
+          10.0
+        ],
+        [
+          "Helpdesk Ticket Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "What is the SLA deadline for resolving a support ticket?",
+      "type": "detail_missing",
+      "expected": [
+        "Support Ticket Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "The Support Ticket Policy states that support tickets must be resolved within SLA, but it does not specify what the SLA deadline or timeframe is.",
+      "policies": [
+        "Support Ticket Policy"
+      ],
+      "found": true,
+      "seconds": 2.310941100004129,
+      "input_tokens": 4911,
+      "output_tokens": 76,
+      "retrieved": [],
+      "tokens": 4987,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4849,
+      "question": "What is the SLA deadline for resolving a support ticket?",
+      "type": "detail_missing",
+      "expected": [
+        "Support Ticket Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "The Support Ticket Policy states that support tickets must be resolved within SLA, but it does not specify what the SLA deadline or timeframe is.",
+      "policies": [
+        "Support Ticket Policy"
+      ],
+      "found": true,
+      "seconds": 2.5664360000082524,
+      "input_tokens": 661,
+      "output_tokens": 76,
+      "retrieved": [
+        [
+          "Support Ticket Policy",
+          0.868
+        ],
+        [
+          "Helpdesk Ticket Policy",
+          0.668
+        ],
+        [
+          "Escalation Policy",
+          0.61
+        ]
+      ],
+      "tokens": 737,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4849,
+      "question": "What is the SLA deadline for resolving a support ticket?",
+      "type": "detail_missing",
+      "expected": [
+        "Support Ticket Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Client Gift Policy: Client gifts must comply with company guidelines.",
+      "policies": [
+        "Client Gift Policy"
+      ],
+      "found": true,
+      "seconds": 7.369999366346747e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Client Gift Policy",
+          8.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "What is the maximum value of a gift I can accept from a client?",
+      "type": "detail_missing",
+      "expected": [
+        "Client Gift Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "The Client Gift Policy states only that client gifts must comply with company guidelines; it does not specify a maximum gift value. The Conflict of Interest Policy also requires you to disclose any potential conflicts of interest.",
+      "policies": [
+        "Client Gift Policy",
+        "Conflict of Interest Policy"
+      ],
+      "found": true,
+      "seconds": 2.1274113999970723,
+      "input_tokens": 4911,
+      "output_tokens": 110,
+      "retrieved": [],
+      "tokens": 5021,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4871,
+      "question": "What is the maximum value of a gift I can accept from a client?",
+      "type": "detail_missing",
+      "expected": [
+        "Client Gift Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "The Client Gift Policy states only that client gifts must comply with company guidelines; it does not specify a maximum value for gifts you can accept from a client.",
+      "policies": [
+        "Client Gift Policy"
+      ],
+      "found": true,
+      "seconds": 2.0464900999941165,
+      "input_tokens": 655,
+      "output_tokens": 76,
+      "retrieved": [
+        [
+          "Client Gift Policy",
+          0.737
+        ],
+        [
+          "Expense Approval Policy",
+          0.598
+        ],
+        [
+          "Offer Letter Policy",
+          0.573
+        ]
+      ],
+      "tokens": 731,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4850,
+      "question": "What is the maximum value of a gift I can accept from a client?",
+      "type": "detail_missing",
+      "expected": [
+        "Client Gift Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Work From Abroad Policy: Employees may work abroad for up to 30 days with approval.",
+      "policies": [
+        "Work From Abroad Policy"
+      ],
+      "found": true,
+      "seconds": 8.110000635497272e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Work From Abroad Policy",
+          4.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": true,
+      "judge_note": "Answered with a policy that does not cover the question",
+      "question": "What is the daily meal allowance when travelling abroad?",
+      "type": "detail_missing",
+      "expected": [
+        "Travel Reimbursement Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "The Travel Reimbursement Policy only states that employees must submit receipts for travel expenses within 30 days. It does not specify a daily meal allowance, whether for domestic or international travel.",
+      "policies": [
+        "Travel Reimbursement Policy"
+      ],
+      "found": true,
+      "seconds": 3.439674699999159,
+      "input_tokens": 4910,
+      "output_tokens": 152,
+      "retrieved": [],
+      "tokens": 5062,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4862,
+      "question": "What is the daily meal allowance when travelling abroad?",
+      "type": "detail_missing",
+      "expected": [
+        "Travel Reimbursement Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "The Travel Reimbursement Policy only states that employees must submit receipts for travel expenses within 30 days, and the Work From Abroad Policy only allows working abroad for up to 30 days with approval. Neither policy specifies a daily meal allowance for travel abroad.",
+      "policies": [
+        "Travel Reimbursement Policy",
+        "Work From Abroad Policy"
+      ],
+      "found": true,
+      "seconds": 3.0482536000054097,
+      "input_tokens": 677,
+      "output_tokens": 132,
+      "retrieved": [
+        [
+          "Travel Reimbursement Policy",
+          0.657
+        ],
+        [
+          "Vacation Policy",
+          0.61
+        ],
+        [
+          "Work From Abroad Policy",
+          0.59
+        ]
+      ],
+      "tokens": 809,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "judge_tokens": 4890,
+      "question": "What is the daily meal allowance when travelling abroad?",
+      "type": "detail_missing",
+      "expected": [
+        "Travel Reimbursement Policy"
+      ],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "Office Access Policy: Access badges must be worn and not shared.",
+      "policies": [
+        "Office Access Policy"
+      ],
+      "found": true,
+      "seconds": 8.22000001790002e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [
+        [
+          "Office Access Policy",
+          3.0
+        ],
+        [
+          "Home Office Equipment Policy",
+          3.0
+        ]
+      ],
+      "tokens": 0,
+      "correct_policy": false,
+      "unsupported": true,
+      "judge_note": "Answered an out-of-scope question",
+      "question": "Can I bring my dog to the office?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 2.364925799993216,
+      "input_tokens": 4904,
+      "output_tokens": 30,
+      "retrieved": [],
+      "tokens": 4934,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Can I bring my dog to the office?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 2.786015999998199,
+      "input_tokens": 646,
+      "output_tokens": 30,
+      "retrieved": [
+        [
+          "Office Access Policy",
+          0.625
+        ],
+        [
+          "Parking Policy",
+          0.599
+        ],
+        [
+          "Home Office Equipment Policy",
+          0.592
+        ]
+      ],
+      "tokens": 676,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Can I bring my dog to the office?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 7.840000034775585e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Is there free lunch on Fridays?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 2.1620060999994166,
+      "input_tokens": 4905,
+      "output_tokens": 30,
+      "retrieved": [],
+      "tokens": 4935,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Is there free lunch on Fridays?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 1.5077425000054063,
+      "input_tokens": 664,
+      "output_tokens": 30,
+      "retrieved": [
+        [
+          "Meeting Etiquette Policy",
+          0.542
+        ],
+        [
+          "Vacation Policy",
+          0.532
+        ],
+        [
+          "Meeting Room Booking Policy",
+          0.523
+        ]
+      ],
+      "tokens": 694,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Is there free lunch on Fridays?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 7.480000203941017e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Does the company pay for a gym membership?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 1.584091400000034,
+      "input_tokens": 4905,
+      "output_tokens": 30,
+      "retrieved": [],
+      "tokens": 4935,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Does the company pay for a gym membership?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 1.6707435000134865,
+      "input_tokens": 649,
+      "output_tokens": 30,
+      "retrieved": [
+        [
+          "Vacation Policy",
+          0.596
+        ],
+        [
+          "Mobile Device Policy",
+          0.595
+        ],
+        [
+          "Company Property Policy",
+          0.585
+        ]
+      ],
+      "tokens": 679,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Does the company pay for a gym membership?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 7.299998833332211e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How much overtime pay do I get for working on a Sunday?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 2.563817900008871,
+      "input_tokens": 4911,
+      "output_tokens": 30,
+      "retrieved": [],
+      "tokens": 4941,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How much overtime pay do I get for working on a Sunday?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 1.726879400011967,
+      "input_tokens": 666,
+      "output_tokens": 30,
+      "retrieved": [
+        [
+          "Remote Work Policy",
+          0.659
+        ],
+        [
+          "Flexible Hours Policy",
+          0.634
+        ],
+        [
+          "Vacation Policy",
+          0.629
+        ]
+      ],
+      "tokens": 696,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "How much overtime pay do I get for working on a Sunday?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "rules",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 7.700000423938036e-05,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "retrieved": [],
+      "tokens": 0,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Do employees get stock options?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "llm",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 1.5157705000019632,
+      "input_tokens": 4901,
+      "output_tokens": 30,
+      "retrieved": [],
+      "tokens": 4931,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Do employees get stock options?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    },
+    {
+      "approach": "rag",
+      "answer": "No policy in the database covers this question.",
+      "policies": [],
+      "found": false,
+      "seconds": 2.0391589000064414,
+      "input_tokens": 644,
+      "output_tokens": 30,
+      "retrieved": [
+        [
+          "Company Property Policy",
+          0.684
+        ],
+        [
+          "Employee Referral Policy",
+          0.672
+        ],
+        [
+          "Tuition Assistance Policy",
+          0.655
+        ]
+      ],
+      "tokens": 674,
+      "correct_policy": true,
+      "unsupported": false,
+      "judge_note": "",
+      "question": "Do employees get stock options?",
+      "type": "out_of_scope",
+      "expected": [],
+      "judge_flag": false
+    }
+  ]
+}

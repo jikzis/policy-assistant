@@ -2,16 +2,20 @@
 
 For every question and approach it records the answer, the policies used, response time and tokens, and:
 - correct_policy: the answer relies on an expected policy (or, for out-of-scope questions, declines);
-- unsupported:    the answer states something the policy database does not support, or answers a
-                  question the database does not cover. Out-of-scope answers are flagged automatically;
-                  LLM answers to covered questions are checked by a separate Claude "judge" call that sees
-                  the whole policy database. Rules-based answers quote a policy verbatim, so they can be
-                  wrong but cannot add facts.
+- judge_flag:     a separate Claude "judge" call, which sees the whole policy database, found claims in an
+                  LLM answer that the database does not support (rules-based answers quote a policy
+                  verbatim, so they cannot add claims and are not judged);
+- unsupported:    the approach gave an answer (did not decline) that is not backed by the database: it
+                  relies on a policy that does not cover the question, answers an out-of-scope question,
+                  or was flagged by the judge. The same definition applies to all three approaches.
 
 usage: python evaluate.py            (needs ANTHROPIC_API_KEY in the environment or in .env)
+       python evaluate.py --quick    (5 questions of mixed types, saved separately, to check the setup)
+       python evaluate.py --rescore  (recompute scores and summary of the saved results; no API calls)
 """
 import json
 import statistics
+import sys
 import time
 from pathlib import Path
 
@@ -46,19 +50,39 @@ def judge(question: str, answer: str) -> tuple[bool, str, int]:
     return data["supported"], data["unsupported_claims"], usage.input_tokens + usage.output_tokens
 
 
-def score(item: dict, r: core.Result) -> dict:
-    row = r.to_dict()
-    if item["type"] == "out_of_scope":
-        row["correct_policy"] = not r.found
-        row["unsupported"] = r.found  # answering a question the database does not cover
-        row["judge_note"] = "Answered an out-of-scope question" if r.found else ""
+def apply_scores(row: dict) -> dict:
+    """correct_policy and unsupported from the answer, the expected policies and the judge flag."""
+    if row["type"] == "out_of_scope":
+        row["correct_policy"] = not row["found"]
     else:
-        row["correct_policy"] = any(p in r.policies for p in item["policies"])
-        row["unsupported"], row["judge_note"] = False, ""
-        if r.approach != "rules" and r.found:
-            supported, note, judge_tokens = judge(item["question"], r.answer)
-            row["unsupported"], row["judge_note"], row["judge_tokens"] = not supported, note, judge_tokens
+        row["correct_policy"] = any(p in row["policies"] for p in row["expected"])
+    row["unsupported"] = row["found"] and (not row["correct_policy"] or row.get("judge_flag", False))
+    if row["unsupported"] and not row.get("judge_note"):
+        row["judge_note"] = ("Answered an out-of-scope question" if row["type"] == "out_of_scope"
+                             else "Answered with a policy that does not cover the question")
     return row
+
+
+def score(item: dict, r: core.Result) -> dict:
+    row = r.to_dict() | {"question": item["question"], "type": item["type"], "expected": item["policies"],
+                         "judge_flag": False, "judge_note": ""}
+    if r.approach != "rules" and r.found and item["type"] != "out_of_scope":
+        supported, note, judge_tokens = judge(item["question"], r.answer)
+        row |= {"judge_flag": not supported, "judge_note": note if not supported else "",
+                "judge_tokens": judge_tokens}
+    return apply_scores(row)
+
+
+def rescore():
+    data = json.loads(OUT.read_text(encoding="utf8"))
+    for row in data["rows"]:
+        if "judge_flag" not in row:  # results saved before judge_flag existed
+            row["judge_flag"] = row["approach"] != "rules" and row["type"] != "out_of_scope" and row["unsupported"]
+        row["judge_note"] = row["judge_note"] if row["judge_flag"] else ""
+        apply_scores(row)
+    data["summary"] = summarise(data["rows"])
+    OUT.write_text(json.dumps(data, indent=2), encoding="utf8")
+    print(json.dumps(data["summary"], indent=2))
 
 
 def summarise(rows: list[dict]) -> dict:
@@ -82,15 +106,27 @@ def summarise(rows: list[dict]) -> dict:
     return out
 
 
+def quick_sample(items: list[dict]) -> list[dict]:
+    """2 answerable, 2 detail-missing and 1 out-of-scope question."""
+    by_type = {t: [i for i in items if i["type"] == t] for t in ("answerable", "detail_missing", "out_of_scope")}
+    return by_type["answerable"][:2] + by_type["detail_missing"][:2] + by_type["out_of_scope"][:1]
+
+
 def main():
+    global OUT
+    if "--rescore" in sys.argv:
+        return rescore()
     items = json.loads(QUESTIONS.read_text(encoding="utf8"))
+    if "--quick" in sys.argv:
+        items, OUT = quick_sample(items), OUT.with_name("eval_results_quick.json")
+    if not core.api_key():
+        sys.exit("ANTHROPIC_API_KEY is not set (add it to .env).")
     core.warm_up()
     rows = []
     for i, item in enumerate(items, 1):
         for key, fn in core.ANSWER.items():
             r = fn(item["question"])
-            row = score(item, r) | {"question": item["question"], "type": item["type"],
-                                     "expected": item["policies"]}
+            row = score(item, r)
             rows.append(row)
             print(f"{i:2}/{len(items)} {key:5} {'OK ' if row['correct_policy'] else 'BAD'} "
                   f"{'UNSUPPORTED' if row['unsupported'] else '':11} {r.seconds:5.2f}s {r.tokens:5} tok  "
