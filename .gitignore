@@ -1,0 +1,6 @@
+# secrets - API keys, Slack tokens and the app password must never be committed
+.env
+.streamlit/secrets.toml
+
+__pycache__/
+.venv/

@@ -1,0 +1,7 @@
+streamlit==1.66.1
+anthropic==2.3.0
+pandas==2.3.3
+numpy==2.5.4
+fastembed==0.9.1
+python-dotenv==1.2.4
+slack_bolt==1.30.0
